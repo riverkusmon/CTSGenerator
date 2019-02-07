@@ -3,6 +3,8 @@ package View;
 import javax.swing.*;
 import Controller.Controller;
 import java.awt.Color;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -73,6 +75,7 @@ public class Panel extends JPanel
         		int input = Integer.valueOf(people);
         		int num = 0;
         		double random = 0;
+        		int delay = 1000;
         		String outputNum = "";
         		
         		for (int i = 1; i < input + 100; i++)
@@ -80,9 +83,15 @@ public class Panel extends JPanel
         			num = input;
         			random = Math.random();
         			num = (int) (num * random);
-        			
+        			try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
         			outputNum = Integer.toString(num);
         			output = new JTextArea(outputNum,20,50);
+        			System.out.println(outputNum);
         			
         			
         			
