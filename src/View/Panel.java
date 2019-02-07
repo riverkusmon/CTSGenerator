@@ -31,9 +31,14 @@ public class Panel extends JPanel
        appLayout.putConstraint(SpringLayout.WEST, genButton, 83, SpringLayout.WEST, this);
 
        resButton = new JButton("reset");
+       appLayout.putConstraint(SpringLayout.NORTH, resButton, 22, SpringLayout.SOUTH, genButton);
+       appLayout.putConstraint(SpringLayout.WEST, resButton, 135, SpringLayout.WEST, this);
 
        
        input = new JTextField();
+       appLayout.putConstraint(SpringLayout.NORTH, input, 44, SpringLayout.NORTH, this);
+       appLayout.putConstraint(SpringLayout.WEST, input, 185, SpringLayout.WEST, this);
+       appLayout.putConstraint(SpringLayout.EAST, input, 50, SpringLayout.EAST, resButton);
 
        output = new JTextArea();
 
@@ -75,7 +80,7 @@ public class Panel extends JPanel
         		int input = Integer.valueOf(people);
         		int num = 0;
         		double random = 0;
-        		String outputNum = "";
+        		String outputNum = " ";
         		
         		for (int i = 1; i < input + 100; i++)
         		{

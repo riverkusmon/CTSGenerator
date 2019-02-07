@@ -1,4 +1,5 @@
 package Controller;
+
 import View.Frame;
 
 	public class Controller 
@@ -7,13 +8,13 @@ import View.Frame;
 	
 	public void start() 
 	{
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
 	public Controller()
 	{
-
+		appFrame = new Frame(this);
 	}
 		
 		
