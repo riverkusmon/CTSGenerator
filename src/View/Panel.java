@@ -27,6 +27,8 @@ public class Panel extends JPanel
    	 appLayout = new SpringLayout();
        
        genButton = new JButton("generate");
+       appLayout.putConstraint(SpringLayout.NORTH, genButton, 83, SpringLayout.NORTH, this);
+       appLayout.putConstraint(SpringLayout.WEST, genButton, 83, SpringLayout.WEST, this);
 
        resButton = new JButton("reset");
 
@@ -84,7 +86,14 @@ public class Panel extends JPanel
         			outputNum = Integer.toString(num);
         			output = new JTextArea(outputNum,20,50);
         			
-        			
+        			System.out.println("test loop");
+        			try
+					{
+						Thread.sleep(50);
+					} catch (InterruptedException e)
+					{
+						e.printStackTrace();
+					}
         			
         		}		
 		    }
