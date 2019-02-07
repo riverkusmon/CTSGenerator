@@ -22,16 +22,19 @@ public class Panel extends JPanel
     public Panel(Controller appController)
     {
    	 super();
-   	 this.appController = appController;   	 
-//   	 fortnite
-   	 
+   	 this.appController = appController;
+
    	 appLayout = new SpringLayout();
        
        genButton = new JButton("generate");
+
        resButton = new JButton("reset");
+
        
        input = new JTextField();
+
        output = new JTextArea();
+
        logo = new JLabel();
 
      setupPanel();
@@ -58,8 +61,7 @@ public class Panel extends JPanel
     {
    	 
    	 
-    }
-    
+    }   
 
     private void setupListeners()
     {
@@ -84,13 +86,8 @@ public class Panel extends JPanel
         			
         			
         			
-        		}
-        		
-        		
+        		}		
 		    }
-        });
-    	
-
-   			 
+        });		 
     }
 }
