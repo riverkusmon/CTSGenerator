@@ -61,30 +61,34 @@ public class Panel extends JPanel
     }
     
 
-
-
-
-
     private void setupListeners()
     {
-   	 
-    	
-    	
-    	
     	genButton.addActionListener(new ActionListener()
-   			 {
-    		public void actionPerformed(ActionEvent click)
-			{
-				String input = input.getText();
-				chatField.setText("");
-				chatArea.setCaretPosition(chatArea.getDocument().getLength());
-			}
-   			 
-   			 
-   			 
-   			 
-   			 }
-   			 });   	 
+        {
+        	public void actionPerformed(ActionEvent click)
+		    {
+        		String people = input.getText();
+        		int input = Integer.valueOf(people);
+        		int num = 0;
+        		double random = 0;
+        		String outputNum = "";
+        		
+        		for (int i = 1; i < input + 100; i++)
+        		{
+        			num = input;
+        			random = Math.random();
+        			num = (int) (num * random);
+        			
+        			outputNum = Integer.toString(num);
+        			output = new JTextArea(outputNum,20,50);
+        			
+        			
+        			
+        		}
+        		
+        		
+		    }
+        });
     	
 
    			 
