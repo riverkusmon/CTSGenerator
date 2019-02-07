@@ -14,7 +14,7 @@ public class Panel extends JPanel
     private JLabel logo;
     private JButton resButton;
     private JButton genButton;
-    private JTextArea output;
+    private JTextField output;
     private JTextField input;
     
     
@@ -36,11 +36,13 @@ public class Panel extends JPanel
 
        
        input = new JTextField();
-       appLayout.putConstraint(SpringLayout.NORTH, input, 44, SpringLayout.NORTH, this);
-       appLayout.putConstraint(SpringLayout.WEST, input, 185, SpringLayout.WEST, this);
-       appLayout.putConstraint(SpringLayout.EAST, input, 50, SpringLayout.EAST, resButton);
+       appLayout.putConstraint(SpringLayout.WEST, input, 166, SpringLayout.WEST, this);
+       appLayout.putConstraint(SpringLayout.SOUTH, input, -12, SpringLayout.NORTH, genButton);
+       appLayout.putConstraint(SpringLayout.EAST, input, 31, SpringLayout.EAST, resButton);
 
-       output = new JTextArea();
+       output = new JTextField();
+       appLayout.putConstraint(SpringLayout.WEST, input, 166, SpringLayout.WEST, this);
+
 
        logo = new JLabel();
 
