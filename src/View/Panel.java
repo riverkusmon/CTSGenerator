@@ -94,7 +94,7 @@ public class Panel extends JPanel
         			System.out.println("test loop");
         			try
 					{
-						Thread.sleep(50);
+						Thread.sleep(80);
 					} catch (InterruptedException e)
 					{
 						e.printStackTrace();
