@@ -6,6 +6,12 @@ import java.awt.Color;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.border.LineBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.TitledBorder;
+import java.awt.SystemColor;
 
 public class Panel extends JPanel
 {
@@ -22,25 +28,44 @@ public class Panel extends JPanel
     public Panel(Controller appController)
     {
    	 super();
+   	 setBorder(null);
    	 this.appController = appController;
 
    	 appLayout = new SpringLayout();
        
        genButton = new JButton("generate");
-       appLayout.putConstraint(SpringLayout.NORTH, genButton, 83, SpringLayout.NORTH, this);
-       appLayout.putConstraint(SpringLayout.WEST, genButton, 83, SpringLayout.WEST, this);
+       appLayout.putConstraint(SpringLayout.NORTH, genButton, 137, SpringLayout.NORTH, this);
+       appLayout.putConstraint(SpringLayout.WEST, genButton, -85, SpringLayout.EAST, this);
+       appLayout.putConstraint(SpringLayout.SOUTH, genButton, -10, SpringLayout.SOUTH, this);
+       appLayout.putConstraint(SpringLayout.EAST, genButton, -10, SpringLayout.EAST, this);
 
        resButton = new JButton("reset");
-       appLayout.putConstraint(SpringLayout.NORTH, resButton, 22, SpringLayout.SOUTH, genButton);
-       appLayout.putConstraint(SpringLayout.WEST, resButton, 135, SpringLayout.WEST, this);
+       appLayout.putConstraint(SpringLayout.NORTH, resButton, 0, SpringLayout.NORTH, genButton);
+       appLayout.putConstraint(SpringLayout.EAST, resButton, 109, SpringLayout.WEST, this);
+       appLayout.putConstraint(SpringLayout.SOUTH, resButton, -10, SpringLayout.SOUTH, this);
+       appLayout.putConstraint(SpringLayout.WEST, resButton, 28, SpringLayout.WEST, this);
+       resButton.addActionListener(new ActionListener() {
+       	public void actionPerformed(ActionEvent e) {
+       	}
+       });
 
        
        input = new JTextField();
-       appLayout.putConstraint(SpringLayout.WEST, input, 166, SpringLayout.WEST, this);
-       appLayout.putConstraint(SpringLayout.SOUTH, input, -12, SpringLayout.NORTH, genButton);
-       appLayout.putConstraint(SpringLayout.EAST, input, 31, SpringLayout.EAST, resButton);
+       input.setText("Amount of people");
+       appLayout.putConstraint(SpringLayout.NORTH, input, 137, SpringLayout.NORTH, this);
+       appLayout.putConstraint(SpringLayout.WEST, input, 57, SpringLayout.EAST, resButton);
+       appLayout.putConstraint(SpringLayout.SOUTH, input, -93, SpringLayout.SOUTH, this);
+       appLayout.putConstraint(SpringLayout.EAST, input, -55, SpringLayout.WEST, genButton);
+       input.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 255, 0)));
+       input.setHorizontalAlignment(SwingConstants.LEFT);
 
        output = new JTextField();
+       output.setCaretColor(SystemColor.controlDkShadow);
+       output.setText("Generated Number");
+       appLayout.putConstraint(SpringLayout.NORTH, output, 13, SpringLayout.SOUTH, input);
+       appLayout.putConstraint(SpringLayout.WEST, output, 57, SpringLayout.EAST, resButton);
+       appLayout.putConstraint(SpringLayout.SOUTH, output, -10, SpringLayout.SOUTH, this);
+       appLayout.putConstraint(SpringLayout.EAST, output, -55, SpringLayout.WEST, genButton);
        appLayout.putConstraint(SpringLayout.WEST, input, 166, SpringLayout.WEST, this);
 
 
@@ -55,8 +80,8 @@ public class Panel extends JPanel
     {
    	 this.setLayout(appLayout);
    	 
-   	 this.setBackground(Color.GRAY);
-   	 
+   	 this.setBackground(Color.WHITE);
+   	 this.setBorder(new java.awt.Color(E51E44));
    	 this.add(logo);
    	 this.add(resButton);
    	 this.add(genButton);
