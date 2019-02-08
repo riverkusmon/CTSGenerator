@@ -67,7 +67,7 @@ public class Panel extends JPanel
        appLayout.putConstraint(SpringLayout.SOUTH, output, -10, SpringLayout.SOUTH, this);
        appLayout.putConstraint(SpringLayout.EAST, output, -55, SpringLayout.WEST, genButton);
        appLayout.putConstraint(SpringLayout.WEST, input, 166, SpringLayout.WEST, this);
-
+       output.setEditable(false);
 
        logo = new JLabel();
 
@@ -134,6 +134,6 @@ public class Panel extends JPanel
         			
         		}		
 		    }
-        });		 
+        });
     }
 }
