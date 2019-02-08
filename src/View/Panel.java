@@ -68,6 +68,7 @@ public class Panel extends JPanel
        appLayout.putConstraint(SpringLayout.EAST, output, -55, SpringLayout.WEST, genButton);
        appLayout.putConstraint(SpringLayout.WEST, input, 166, SpringLayout.WEST, this);
        output.setEditable(false);
+       output.setHorizontalAlignment(JTextField.CENTER);
 
        logo = new JLabel();
 
@@ -121,12 +122,13 @@ public class Panel extends JPanel
         			}
         			
         			outputNum = Integer.toString(num);
-        			output.setText(outputNum);
+        			
         			
         			System.out.println("test loop");
         			try
 					{
 						Thread.sleep(80);
+						output.setText(outputNum);
 					} catch (InterruptedException e)
 					{
 						e.printStackTrace();
