@@ -81,7 +81,7 @@ public class Panel extends JPanel
    	 this.setLayout(appLayout);
    	 
    	 this.setBackground(Color.WHITE);
-   	 this.setBorder(new java.awt.Color(E51E44));
+ //  	 this.setBorder(new java.awt.Color(E51E44));
    	 this.add(logo);
    	 this.add(resButton);
    	 this.add(genButton);
