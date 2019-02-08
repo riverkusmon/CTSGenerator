@@ -109,14 +109,19 @@ public class Panel extends JPanel
         		double random = 0;
         		String outputNum = " ";
         		
-        		for (int i = 1; i < input + 100; i++)
+        		for (int i = 1; i < input; i++)
         		{
         			num = input;
         			random = Math.random();
         			num = (int) (num * random);
         			
+        			if (num == 0)
+        			{
+        				num = 1;
+        			}
+        			
         			outputNum = Integer.toString(num);
-        			output = new JTextArea(outputNum,20,50);
+        			output.setText(outputNum);
         			
         			System.out.println("test loop");
         			try
