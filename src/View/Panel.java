@@ -104,8 +104,10 @@ public class Panel extends JPanel
         {
         	public void actionPerformed(ActionEvent click)
 		    {
+        		
+        		output.setText(" ");
         		String people = input.getText();
-        		int input = Integer.valueOf(people);
+        		int input = Integer.parseInt(people);
         		int num = 0;
         		double random = 0;
         		String outputNum = " ";
@@ -135,6 +137,15 @@ public class Panel extends JPanel
 					}
         			
         		}		
+		    }
+        });
+    	
+    	resButton.addActionListener(new ActionListener()
+        {
+        	public void actionPerformed(ActionEvent click)
+		    {
+        		output.setText("Generated Number");
+        		input.setText("Number of people");
 		    }
         });
     }
